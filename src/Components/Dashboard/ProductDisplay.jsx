@@ -5,3 +5,4 @@ export default function ProductDisplay() {
     <div>ProductDisplay</div>
   )
 }
+

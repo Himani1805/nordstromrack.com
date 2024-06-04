@@ -4,24 +4,10 @@ import React from 'react'
 export default function FooterBanner() {
   return (
     <Box width={"100%"} padding={"35px"}>
-      <Flex backgroundColor={"black"} color={"white"}>
-        <Box width={"50%"}>
-          <Heading fontSize={"60px"} >BE FIRST TO KNOW</Heading>
-        </Box>
-        <Box width={"50%"}>
-          <h3>Get the inside scoop one new arrivals from Nordstrom, ne markdowns, private sales and more</h3>
-          <h3>Sign Up for Email</h3> 
-        </Box> 
-      </Flex>
-      <Flex justifyContent={"flex-end"} backgroundColor={"greenyellow"}>
-        <Box width={"50%"}>
-          {/* For layout purpose. we leave this box empty. */}
-        </Box>
-        <Flex width={"50%"} >
-          <h2>Get Email Updates:</h2>
-          <Input width={"40%"} palceholder="Email Address"></Input>
-          <Button width={"40%"}>Sign up</Button>
-        </Flex>
+      <Flex width={"100%"} justifyContent={"right"} gap={"20px"} alignItems={"center"}>
+        <Heading fontSize={"16px"}>Get Email Updates:</Heading>
+        <Input width={"20%"} borderRadius={"none"} border={"1px solid black"} palceholder="Email Address"></Input>
+        <Button width={"20%"} borderRadius={"none"} colorScheme='twitter'>Sign up</Button>
       </Flex>
     </Box>
   )
