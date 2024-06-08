@@ -5,9 +5,9 @@ import { Box, Text } from '@chakra-ui/react';
 
 const Example = () => {
     const images = [
-        "/public/Static/Images/SliderImg1.jpeg",
-        "/public/Static/Images/SliderImg2.jpeg",
-        "/public/Static/Images/SliderImg3.jpeg",
+        "/Static/Images/SliderImg1.jpeg",
+        "/Static/Images/SliderImg2.jpeg",
+        "/Static/Images/SliderImg3.jpeg",
         
     ];
 
