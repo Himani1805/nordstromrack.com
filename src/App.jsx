@@ -8,15 +8,18 @@ import Banner from './Components/Dashboard/Banner'
 // import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <Flex flexDirection={"column"} gap={"20px"} > 
+    <Flex width={'100%'} flexDirection={"column"} > 
       <Header/>
       <Divider width={"96%"} margin={"auto"}/>
       <Navbar/>
-      <AppRoute/>
-      <Footer/> 
+      <Flex flexDirection={'column'} gap={'40px'} padding={"30px"} >
+        <AppRoute/>
+      </Flex>
+      <Flex width={"100%"}>
+        <Footer/>
+      </Flex>
     </Flex>
   )
 }

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 export default function CustomerService() {
   return (
-    <VStack>
+    <VStack textAlign={"left"} align={"left"}>
         <Heading fontSize={"16px"}>Customer Service</Heading>
         <Link to={"#"}>Order Status</Link>
         <Link to={"#"}>Guest Returns</Link>

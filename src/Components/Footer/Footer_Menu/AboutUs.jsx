@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 export default function AboutUs() {
   return (
-    <VStack>
+    <VStack textAlign={"left"} align={"left"}>
         <Heading fontSize={"16px"}>About Us</Heading>
         <Link to={"#"}>About Our Brand</Link>
         <Link to={"#"}>The Nordy Club</Link>

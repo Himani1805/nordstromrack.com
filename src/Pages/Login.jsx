@@ -17,7 +17,7 @@ export default function Login() {
     setData({...data, [name]:value})
   }
   return (
-    <Flex width={"100%"} justifyContent={"space-evenly"} > 
+    <Flex width={"100%"} justifyContent={"space-evenly"} margin={"5px 0px"} > 
       <Flex width={"38%"} flexDirection={"column"} border={"1px solid gray"} gap={"20px"} padding={"50px"}>
         <Heading fontSize={"24px"}>Sign in</Heading>
         <Text>New to Nordstrom Rack?</Text><Link to={"#"} color={'#3A80E1'}> Create an account.</Link>

@@ -9,20 +9,18 @@ import { LuInstagram } from "react-icons/lu";
 
 export default function DownloadOurApps() {
   return (
-    <VStack>
-        <Flex>
-            <Box>
-                <Flex gap={"10px"}>
-                  <HiMiniDevicePhoneMobile width={"100px"} />
-                  <Link to={"#"}>Download Our Apps</Link>
-                </Flex>
-                <Flex gap={"20px"}>
-                  <FaFacebook />
-                  <FaXTwitter />
-                  <FaPinterest />
-                  <LuInstagram />
-                </Flex>
-            </Box>
+    <VStack textAlign={"left"} align={"left"} >
+        <Flex flexDirection={"column"} gap={"30px"} alignItems={"center"}> 
+          <Flex gap={"10px"}>
+            <HiMiniDevicePhoneMobile size={"30px"} />
+            <Link to={"#"}>Download Our Apps</Link>
+          </Flex>
+          <Flex gap={"20px"} >
+            <FaFacebook size={"25px"}/>
+            <FaXTwitter size={"25px"} />
+            <FaPinterest size={"25px"}/>
+            <LuInstagram size={"25px"}/>
+          </Flex>
         </Flex> 
         <Box>
           <p>Top</p>

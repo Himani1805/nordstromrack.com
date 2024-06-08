@@ -9,7 +9,7 @@ import DownloadOurApps from './Footer_Menu/DownloadOurApps'
 
 export default function FooterMenu() {
   return (
-    <Flex backgroundColor={"#ddd"} py={"40px"} gap={"20px"} textAlign={"left"}>
+    <Flex width={'100%'} backgroundColor={"#F0F3F5"} p={"40px"} gap={"20px"} >
       <CustomerService/>
       <AboutUs/>
       <NordCommunity/>

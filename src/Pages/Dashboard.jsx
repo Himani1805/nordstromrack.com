@@ -4,8 +4,7 @@ import MainDashboard from '../Components/Dashboard/MainDashboard'
 export default function Dashboard() {
   return (
     <div>
-      <MainDashboard/>
-
+      <MainDashboard />
     </div>
   )
 }

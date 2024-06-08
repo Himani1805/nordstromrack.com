@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 export default function NordInc() {
   return (
-    <VStack>
+    <VStack textAlign={"left"} align={"left"}>
         <Heading fontSize={"16px"}>Nordstrom, Inc.</Heading>
         <Link to={"#"}>Nordstrom</Link>
         <Link to={"#"}>HauteLook</Link>
