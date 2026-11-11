@@ -9,7 +9,7 @@ export default function NordInc() {
         <Heading fontSize={"16px"}>Nordstrom, Inc.</Heading>
         <Link to={"#"}>Nordstrom</Link>
         <Link to={"#"}>HauteLook</Link>
-        <Link to={"#"}>Investor Realtions</Link>
+        <Link to={"#"}>Investor Relations</Link>
         <Link to={"#"}>Press Releases</Link>
         <Link to={"#"}>Nordstrom Media Network</Link>
     </VStack>

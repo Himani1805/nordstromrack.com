@@ -1,60 +1,91 @@
-import { Box, Flex, Image, VStack } from '@chakra-ui/react'
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import { Box, Button, Flex, Image, Text, VStack, useToast } from '@chakra-ui/react'
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { products } from '../../data/products'
+import { addToCart } from '../../utils/cart'
 
 export default function ProductsSlider() {
-  const [data, setData]=useState([])
-  const [loading, setLoading]= useState(false)
+  const toast = useToast()
 
-  async function getProduct(){
-    const options = {
-      method: 'GET',
-      url: 'https://myntra-data.p.rapidapi.com/search_with_id/22451388',
-      headers: {
-        'x-rapidapi-key': '97e4f182f3msh02678cb69b9377dp11d6d8jsn8bb7447a7f5f',
-        'x-rapidapi-host': 'myntra-data.p.rapidapi.com'
-      }
-    };
-    
-
-    try {
-      setLoading (true)
-      // let res = await axios.get('https://myntra-data.p.rapidapi.com', {
-      //   headers: {
-      //     'x-rapidapi-host': 'myntra-data.p.rapidapi.com',
-      //     'x-rapidapi-key': '97e4f182f3msh02678cb69b9377dp11d6d8jsn8bb7447a7f5f'
-      //   }
-      // });
-      const response = await axios.request(options);
-      console.log(response.data);
-      setData(res?.data);
-      setLoading(false)
-    } catch (error) {
-
-      setLoading(false)
-    }
+  function handleAdd(product) {
+    addToCart(product)
+    toast({
+      title: 'Added to bag',
+      description: product.title,
+      status: 'success',
+      duration: 1800,
+      isClosable: true,
+    })
   }
-  useEffect(()=>{
-    getProduct()
-  }, [])
 
   return (
-
-    <VStack>
-      <Flex width={'100%'} flexWrap={'wrap'} justifyContent={'space-evenly'} textAlign={'center'}>
-        {
-          data.map((ele,i)=>{
-            return(
-              <Flex key={i} width={'20%'} gap={'20%'}  flexDirection={'column'} justifyContent={'space-evenly'} boxShadow={'box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px'} padding={'10px'} alignItems={'center'} >
-                <Image src={ele.images[0]} width={'300px'} border={'2px solid red'}/>
-                <h2>{ele.title}</h2>
-                <h1>{ele.category["name"]}</h1>
-                <h3>{ele.price}</h3>
-              </Flex>
-            )
-
-          })
-        }
+    <VStack width="100%" align="stretch" gap="16px">
+      <Flex justify="space-between" align="center" gap="12px" flexWrap="wrap">
+        <Text fontSize={{ base: '20px', md: '24px' }} fontWeight="700">
+          Featured Finds
+        </Text>
+        <Link to="/search">
+          <Text color="#186ADC" fontSize="14px" textDecoration="underline">
+            View all
+          </Text>
+        </Link>
+      </Flex>
+      <Flex
+        width="100%"
+        flexWrap="wrap"
+        justifyContent={{ base: 'center', md: 'flex-start' }}
+        gap={{ base: '14px', md: '20px' }}
+      >
+        {products.map((product) => (
+          <Flex
+            key={product.id}
+            width={{ base: '100%', sm: 'calc(50% - 10px)', md: 'calc(33.333% - 14px)' }}
+            flexDirection="column"
+            gap="10px"
+            padding={{ base: '10px', md: '12px' }}
+            border="1px solid #E5E5E5"
+            borderRadius="8px"
+            bg="white"
+          >
+            <Link to={`/product/${product.id}`}>
+              <Box
+                overflow="hidden"
+                borderRadius="6px"
+                bg="#FAFAFA"
+                height={{ base: '220px', md: '260px' }}
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+              >
+                <Image
+                  src={product.image}
+                  alt={product.title}
+                  width="100%"
+                  height="100%"
+                  objectFit="contain"
+                  objectPosition="center"
+                />
+              </Box>
+            </Link>
+            <Text fontSize="14px" color="#666">
+              {product.category}
+            </Text>
+            <Link to={`/product/${product.id}`}>
+              <Text fontWeight="600">{product.title}</Text>
+            </Link>
+            <Text fontWeight="700">{product.price}</Text>
+            <Button
+              size="sm"
+              bg="#186ADC"
+              color="white"
+              borderRadius="4px"
+              _hover={{ bg: '#1457b0' }}
+              onClick={() => handleAdd(product)}
+            >
+              Add to Bag
+            </Button>
+          </Flex>
+        ))}
       </Flex>
     </VStack>
   )

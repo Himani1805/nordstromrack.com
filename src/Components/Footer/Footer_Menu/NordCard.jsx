@@ -9,7 +9,7 @@ export default function NordCard() {
         <Heading fontSize={"16px"}>Nordstrom Card</Heading>
         <Link to={"#"}>Apply for a  Nordstrom Card</Link>
         <Link to={"#"}>Pay My Bill</Link>
-        <Link to={"#"}>Manange my Nordstrom Card</Link>
+        <Link to={"#"}>Manage my Nordstrom Card</Link>
     </VStack>
   )
 }
